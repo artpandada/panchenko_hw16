@@ -19,9 +19,9 @@ function getFibonacci(num) {
     }
 
     let fibonacci = getNumberFibonacci();
-    let result;
+    let result = [];
     for (let i = 0; i < num; i++) {
-        result = fibonacci.next().value;
+        result.push(fibonacci.next().value);
     }
     return result;
 
@@ -35,6 +35,7 @@ function cacheEl(fn) {
     return function () {
 
         const arg = Array.from(arguments)[0];
+
 
         if (cash.has(arg)) {
             return cash.get(arg);
